@@ -3,6 +3,6 @@
 
 Buscar de acuerdo al numero de sus grupos en [Carpetas de grupos](https://uccl0-my.sharepoint.com/:f:/g/personal/jlreutte_uc_cl/IgCPiUy_PJfVRruNgUQLDiLqAeLWtjKRiHV8FRHeWGArK8Q?e=uTKMdV).
 
-## Integrantes del Grupo
-# Grupo 33
+# Integrantes del Grupo
+## Grupo 33
 Emma Brunetti Fantuzzi - 23645083
