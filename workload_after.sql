@@ -274,15 +274,10 @@ UPDATE inventory
 SET stock_count = stock_count - 1, last_updated = CURRENT_TIMESTAMP
 WHERE book_id = 14050 AND warehouse_id = 8;
 
--- ===== 047 =====
-SELECT DISTINCT r.user_id, r.book_id
-FROM reviews r
-WHERE EXISTS (
-    SELECT 1 FROM orders o
-    JOIN order_items oi ON oi.order_id = o.order_id
-    WHERE o.user_id = r.user_id AND oi.book_id = r.book_id
-)
-  AND r.review_date >= '2022-11-01' AND r.review_date < '2022-12-01';
+-- ===== 047 ===== MATVIEW PROPUESTO ANTO
+SELECT DISTINCT user_id, book_id
+FROM reviews_with_purchase
+WHERE review_date >= '2022-11-01' AND review_date < '2022-12-01';
 
 -- ===== 048 =====
 SELECT user_id, is_premium, country
@@ -479,15 +474,10 @@ WHERE genre = 'children'
   AND publication_year >= 2022
 ORDER BY publication_year DESC, price ASC LIMIT 50;
 
--- ===== 082 =====
-SELECT DISTINCT r.user_id, r.book_id
-FROM reviews r
-WHERE EXISTS (
-    SELECT 1 FROM orders o
-    JOIN order_items oi ON oi.order_id = o.order_id
-    WHERE o.user_id = r.user_id AND oi.book_id = r.book_id
-)
-  AND r.review_date >= '2023-04-01' AND r.review_date < '2023-05-01';
+-- ===== 082 ===== MATVIEW PROPUESTO ANTO
+SELECT DISTINCT user_id, book_id
+FROM reviews_with_purchase
+WHERE review_date >= '2023-04-01' AND review_date < '2023-05-01';
 
 -- ===== 083 =====
 SELECT book_id, title, price, publication_year
