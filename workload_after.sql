@@ -126,9 +126,11 @@ WHERE genre = 'poetry'
 ORDER BY publication_year DESC, price ASC LIMIT 50;
 
 -- ===== 021 =====
-SELECT COUNT(*)
-FROM book_rating_summary
-WHERE n_reviews >= 10 AND avg_rating > 4.0;
+SELECT COUNT(*) FROM (
+    SELECT book_id FROM reviews
+    GROUP BY book_id
+    HAVING COUNT(*) >= 10 AND AVG(rating) > 4.0
+) sub;
 
 -- ===== 022 =====
 SELECT review_id, user_id, rating, review_text, review_date
@@ -274,7 +276,7 @@ UPDATE inventory
 SET stock_count = stock_count - 1, last_updated = CURRENT_TIMESTAMP
 WHERE book_id = 14050 AND warehouse_id = 8;
 
--- ===== 047 ===== MATVIEW PROPUESTO ANTO
+-- ===== 047 ===== 
 SELECT DISTINCT user_id, book_id
 FROM reviews_with_purchase
 WHERE review_date >= '2022-11-01' AND review_date < '2022-12-01';
@@ -474,7 +476,7 @@ WHERE genre = 'children'
   AND publication_year >= 2022
 ORDER BY publication_year DESC, price ASC LIMIT 50;
 
--- ===== 082 ===== MATVIEW PROPUESTO ANTO
+-- ===== 082 ===== 
 SELECT DISTINCT user_id, book_id
 FROM reviews_with_purchase
 WHERE review_date >= '2023-04-01' AND review_date < '2023-05-01';
@@ -511,9 +513,11 @@ WHERE genre = 'cooking'
 ORDER BY publication_year DESC, price ASC LIMIT 50;
 
 -- ===== 088 =====
-SELECT COUNT(*)
-FROM book_rating_summary
-WHERE n_reviews >= 10 AND avg_rating > 4.0;
+SELECT COUNT(*) FROM (
+    SELECT book_id FROM reviews
+    GROUP BY book_id
+    HAVING COUNT(*) >= 10 AND AVG(rating) > 4.0
+) sub;
 
 -- ===== 089 =====
 SELECT book_id, title, price, publication_year
@@ -581,6 +585,8 @@ WHERE book_id = 3058
 ORDER BY review_date DESC LIMIT 20;
 
 -- ===== 100 =====
-SELECT COUNT(*)
-FROM book_rating_summary
-WHERE n_reviews >= 10 AND avg_rating > 4.0;
+SELECT COUNT(*) FROM (
+    SELECT book_id FROM reviews
+    GROUP BY book_id
+    HAVING COUNT(*) >= 10 AND AVG(rating) > 4.0
+) sub;
