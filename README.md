@@ -10,12 +10,12 @@ Antonia Belén Ríos Donoso - 23644524 <br>
 Martín Concha Ortega - 24643130 <br>
 
 # Versión utilizada
-PostgreSQL 18.3
+PostgreSQL 18.3 <br>
 Python 3.12
 
 # Comandos para reproducir
 ## 0. Ubicarse en carpeta del proyecto
-cd <path/to/project-directory>
+cd <path/to/project-directory> <br>
 ej: cd path/to/Tarea-2-Bases-de-Datos
 ## 1. Crear base de datos
 createdb bookstore_g33
@@ -30,23 +30,23 @@ psql -d bookstore_g33 -f matview.sql
 ## 6. Actualizar estadísticas
 psql -d bookstore_g33 -c "ANALYZE;"
 ## 7. Ejecutar workload optimizado
-python run_workload.py --db bookstore_g33 --workload workload_after.sql --csv times_after.csv
-o en algunos sistemas
+python run_workload.py --db bookstore_g33 --workload workload_after.sql --csv times_after.csv <br>
+o en algunos sistemas <br>
 python3 run_workload.py --db bookstore_g33 --workload workload_after.sql --csv times_after.csv
 
 # En caso de requerir autenticación explícita, utilizar:
 
 ## En crear base de datos (1)
-createdb -U <usuario> bookstore_g33
+createdb -U <usuario> bookstore_g33 <br>
 ej: createdb -U postgres bookstore_g33 ...
 ## En comandos sql (2, 3, 4, 5, 6)
-psql -U <usuario> -d bookstore_g33 -f schema.sql
-psql -U <usuario> -d bookstore_g33 -f load.sql
-psql -U <usuario> -d bookstore_g33 -f indexes.sql
-psql -U <usuario> -d bookstore_g33 -f matview.sql
-psql -U <usuario> -d bookstore_g33 -c "ANALYZE;"
+psql -U <usuario> -d bookstore_g33 -f schema.sql <br>
+psql -U <usuario> -d bookstore_g33 -f load.sql <br>
+psql -U <usuario> -d bookstore_g33 -f indexes.sql <br>
+psql -U <usuario> -d bookstore_g33 -f matview.sql <br>
+psql -U <usuario> -d bookstore_g33 -c "ANALYZE;" <br>
 ej: psql -U postgres -d bookstore_g33 -f schema.sql
 
 ## En Ejecutar workload (7)
-python run_workload.py --db bookstore_g33 --workload workload_after.sql --csv times_after.csv --user <usuario> --password <contraseña>
+python run_workload.py --db bookstore_g33 --workload workload_after.sql --csv times_after.csv --user <usuario> --password <contraseña> <br>
 ej: python run_workload.py --db bookstore_g33 --workload workload_after.sql --csv times_after.csv --user postgres --password postgres
