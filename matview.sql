@@ -9,5 +9,6 @@ WHERE EXISTS (
     JOIN order_items oi ON oi.order_id = o.order_id
     WHERE o.user_id = r.user_id AND oi.book_id = r.book_id
 );
+
 -- Índice sobre la matview para acelerar el filtro
 CREATE INDEX idx_rwp_date ON reviews_with_purchase(review_date);
