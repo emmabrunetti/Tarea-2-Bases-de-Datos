@@ -5,9 +5,9 @@ Buscar de acuerdo al numero de sus grupos en [Carpetas de grupos](https://uccl0-
 
 # Integrantes del Grupo
 ## Grupo 33
-Emma Brunetti Fantuzzi - 23645083 ..
-Antonia Belén Ríos Donoso - 23644524 ..
-Martín Concha Ortega - 24643130 ..
+Emma Brunetti Fantuzzi - 23645083 <br>
+Antonia Belén Ríos Donoso - 23644524 <br>
+Martín Concha Ortega - 24643130 <br>
 
 # Versión utilizada
 PostgreSQL 18.3
